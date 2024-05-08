@@ -27,6 +27,7 @@
             <td>{{ contacto.apellido_materno }}</td>
             <td class="table-data-action">
               <div>
+                <!-- <a [routerLink]="['/detalle', contacto.id]"><i class="ri-eye-fill"></i></a> -->
                 <a [routerLink]="['/contacto', contacto.id, 'editar']"><i class="ri-edit-box-line"></i></a>
                 <button class="btn btn-link p-0" (click)="deleteContacto(contacto.id)"><i class="ri-delete-bin-2-line"></i></button>
               </div>
