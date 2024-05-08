@@ -8,20 +8,19 @@ import { Contacto } from 'src/app/models/contacto.model';
   styleUrls: ['./contacto-list.component.scss']
 })
 export class ContactoListComponent implements OnInit {
-
+  currentPage: number = 1;
+  totalPages!: number;
   contactos: Contacto[] = [];
-  currentPage = 1;
-  totalPages = 1;
-  pageSize = 10; // Tamaño de la página
+  pageSize = 10;
 
   constructor(private contactoService: ContactoService) { }
 
   ngOnInit(): void {
-    this.getContactosPaginados(this.currentPage, this.pageSize);
+    this.getContactosPaginados(this.currentPage);
   }
 
-  getContactosPaginados(page: number, pageSize: number): void {
-    this.contactoService.getContactosPaginados(page, pageSize).subscribe(response => {
+  getContactosPaginados(page: number): void {
+    this.contactoService.getContactosPaginados(page, this.pageSize).subscribe(response => {
       this.contactos = response.data;
       this.currentPage = response.current_page;
       this.totalPages = response.last_page;
@@ -30,21 +29,21 @@ export class ContactoListComponent implements OnInit {
 
   nextPage(): void {
     if (this.currentPage < this.totalPages) {
-      this.getContactosPaginados(this.currentPage + 1, this.pageSize);
+      this.getContactosPaginados(this.currentPage + 1);
     }
   }
 
   previousPage(): void {
     if (this.currentPage > 1) {
-      this.getContactosPaginados(this.currentPage - 1, this.pageSize);
+      this.getContactosPaginados(this.currentPage - 1);
     }
   }
+
   goToFirstPage(): void {
-    this.currentPage = 1;
-    this.getContactosPaginados(this.currentPage, this.pageSize);
+    this.getContactosPaginados(1);
   }
+
   goToLastPage(): void {
-    this.currentPage = this.totalPages;
-    this.getContactosPaginados(this.currentPage, this.pageSize);
+    this.getContactosPaginados(this.totalPages);
   }
 }

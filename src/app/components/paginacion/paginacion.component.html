@@ -1,0 +1,8 @@
+<div class="pagination">
+    <button (click)="goToFirstPage()" class="pagination-button">Primera</button>
+    <button (click)="previousPage()" class="pagination-button">Anterior</button>
+    <button *ngFor="let page of generatePageArray()" class="pagination-button" (click)="pageChange.emit(page)" [ngClass]="{ 'active': page === currentPage }">{{ page }}</button>
+    <button (click)="nextPage()" class="pagination-button">Siguiente</button>
+    <button (click)="goToLastPage()" class="pagination-button">Última</button>
+  </div>
+  

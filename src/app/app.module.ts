@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactoListComponent } from './components/contacto-list/contacto-list.component';
+import { PaginacionComponent } from './components/paginacion/paginacion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    ContactoListComponent
+    ContactoListComponent,
+    PaginacionComponent
   ],
   imports: [
     BrowserModule,
