@@ -25,4 +25,10 @@ export class ContactoService {
     };
     return this.http.get<PaginatedResponse>(this.API_URL, { params });
   }
+  getContacto(id: number): Observable<Contacto> {
+    return this.http.get<Contacto>(`${this.API_URL}/${id}`);
+  }
+  deleteExpense(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.API_URL}/${id}`);
+  }
 }
