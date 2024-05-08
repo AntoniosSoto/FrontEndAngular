@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Contacto } from '../models/contacto.model';
+import { CommonModule } from '@angular/common';
 
 interface PaginatedResponse {
   data: Contacto[];

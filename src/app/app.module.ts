@@ -10,9 +10,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactoListComponent } from './components/contacto-list/contacto-list.component';
 import { PaginacionComponent } from './components/paginacion/paginacion.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
-import { DetalleComponent } from './components/detalle/detalle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './components/modal/modal.component';
+import { DetalleComponent } from './components/detalle/detalle.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +22,8 @@ import { ModalComponent } from './components/modal/modal.component';
     ContactoListComponent,
     PaginacionComponent,
     FormularioComponent,
-    DetalleComponent,
-    ModalComponent
+    ModalComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,
