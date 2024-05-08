@@ -83,7 +83,9 @@ export class FormularioComponent {
     this.contactoId = Number(this.route.snapshot.paramMap.get('id'));
   
     if (this.contactoId) {
+      console.log('Contacto ID:', this.contactoId); // Verifica que se esté obteniendo el ID correctamente
       this.contactoService.getContacto(this.contactoId).subscribe(contacto => {
+        console.log('Contacto:', contacto.apellido_materno); // Verifica que se esté recibiendo el contacto correctamente
         this.contactoForm.patchValue({
           nombre: contacto.nombre,
           apellido_paterno: contacto.apellido_paterno,
@@ -92,4 +94,5 @@ export class FormularioComponent {
       });
     }
   }
+  
 }
