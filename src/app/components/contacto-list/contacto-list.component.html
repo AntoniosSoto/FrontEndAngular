@@ -1,0 +1,55 @@
+<div class="d-flex align-items-center justify-content-between gap-2 flex-wrap mt-5 mb-4">
+    <h2 class="section-title">Contactos</h2>
+  </div>
+  
+  <div class="table-responsive mb-5">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido Paterno</th>
+          <th scope="col">Apellido Materno</th>
+          <th scope="col" class="table-head-action"></th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <ng-container *ngIf="contactos.length; else emptyMessage">
+          <tr *ngFor="let contacto of contactos">
+            <td>{{ contacto.id }}</td>
+            <td>{{ contacto.nombre }}</td>
+            <td>{{ contacto.apellido_paterno }}</td>
+            <td>{{ contacto.apellido_materno }}</td>
+            <td class="table-data-action">
+              <div>
+                <a [routerLink]="['/gastos', contacto.id, 'editar']"><i class="ri-edit-box-line"></i></a>
+                <!-- <button class="btn btn-link p-0" (click)="deleteContacto(contacto.id)"><i class="ri-delete-bin-2-line"></i></button> -->
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+
+        <ng-template #emptyMessage>
+          <tr>
+            <td colspan="6">No hay datos para mostrar</td>
+          </tr>
+        </ng-template>
+      </tbody>
+    </table>
+      <!-- Controles de paginación -->
+  <div class="pagination-controls">
+    <!-- Botón para ir a la primera página -->
+    <button (click)="goToFirstPage()" [disabled]="currentPage === 1">Primera</button>
+    <!-- Botón para ir a la página anterior -->
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
+    <!-- Mostrar la página actual y el total de páginas -->
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <!-- Botón para ir a la página siguiente -->
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
+    <!-- Botón para ir a la última página -->
+    <button (click)="goToLastPage()" [disabled]="currentPage === totalPages">Última</button>
+  </div>
+</div>
+  
