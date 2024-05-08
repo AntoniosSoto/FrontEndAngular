@@ -47,7 +47,7 @@ export class ContactoListComponent implements OnInit {
     this.getContactosPaginados(this.totalPages);
   }
   deleteContacto(id: number): void {
-    this.contactoService.deleteExpense(id).subscribe(response => {
+    this.contactoService.deleteContacto(id).subscribe(response => {
       this.contactos = this.contactos.filter(contacto => contacto.id != id);
     });
   }

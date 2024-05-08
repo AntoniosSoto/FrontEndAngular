@@ -1,0 +1,44 @@
+<div class="d-flex align-items-center justify-content-between flex-wrap mt-5 mb-4 border-bottom">
+    <h2 class="section-title mb-4">{{ getFormTitle() }}</h2>
+    <div class="d-flex gap-2 mb-3">
+      <a class="btn btn-outline-secondary" routerLink="/gastos">Cancelar</a>
+      <button type="button" class="btn btn-primary" (click)="saveContacto()" [disabled]="this.contactoForm.invalid">Guardar Contacto</button>
+    </div>
+  </div>
+  
+  <form class="mb-5" [formGroup]="contactoForm" (ngSubmit)="saveContacto()">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control {{ hasError('nombre') ? 'is-invalid' : '' }}" id="nombre">
+        <div class="invalid-feedback" [ngSwitch]="getCurrentError('nombre')">
+          <span *ngSwitchCase="'required'">El campo nombre es requerido</span>
+          <span *ngSwitchCase="'maxlength'">El campo nombre debe contener 20 caracteres como máximo</span>
+          <span *ngSwitchCase="'pattern'">El campo nombre solo permite letras y espacios</span>
+        </div>
+        
+    </div>
+    <div class="mb-3">
+      <label for="Apellido_paterno" class="form-label">Apellido Paterno</label>
+      <div class="input-group has-validation">
+        <input type="text" formControlName="apellido_paterno" class="form-control {{ hasError('apellido_paterno') ? 'is-invalid' : '' }}" id="apellido_paterno">
+        <div class="invalid-feedback" [ngSwitch]="getCurrentError('apellido_paterno')">
+          <span *ngSwitchCase="'required'">El campo Apellido Paterno es requerido</span>
+          <span *ngSwitchCase="'maxlength'">El campo apellido Paterno debe contener 20 caracteres como máximo</span>
+          <span *ngSwitchCase="'pattern'">El campo Apellido Paterno solo permite letras y espacios</span>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Apellido_materno" class="form-label">Apellido Materno</label>
+      <div class="input-group has-validation">
+        <input type="text" formControlName="apellido_materno" class="form-control {{ hasError('apellido_materno') ? 'is-invalid' : '' }}" id="apellido_materno">
+        <div class="invalid-feedback" [ngSwitch]="getCurrentError('apellido_materno')">
+          <span *ngSwitchCase="'required'">El campo Apellido Materno es requerido</span>
+          <span *ngSwitchCase="'maxlength'">El campo Apellido Materno debe contener 20 caracteres como máximo</span>
+          <span *ngSwitchCase="'pattern'">El campo Apellido Materno solo permite letras y espacios</span>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="this.contactoForm.invalid">Guardar gasto</button>
+  </form>
+  

@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactoListComponent } from './components/contacto-list/contacto-list.component';
 import { PaginacionComponent } from './components/paginacion/paginacion.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PaginacionComponent } from './components/paginacion/paginacion.componen
     HomeComponent,
     NavbarComponent,
     ContactoListComponent,
-    PaginacionComponent
+    PaginacionComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

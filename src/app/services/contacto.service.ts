@@ -28,7 +28,13 @@ export class ContactoService {
   getContacto(id: number): Observable<Contacto> {
     return this.http.get<Contacto>(`${this.API_URL}/${id}`);
   }
-  deleteExpense(id: number): Observable<any> {
+  createContacto(data: Contacto): Observable<Contacto> {
+    return this.http.post<Contacto>(`${this.API_URL}/`, data);
+  }
+  updateContacto(id: number, data: Contacto): Observable<Contacto> {
+    return this.http.put<Contacto>(`${this.API_URL}/${id}`, data);
+  }
+  deleteContacto(id: number): Observable<any> {
     return this.http.delete<any>(`${this.API_URL}/${id}`);
   }
 }
