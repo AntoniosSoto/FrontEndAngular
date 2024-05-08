@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Detalle } from 'src/app/models/detalle.model';
-import { DetalleService } from 'src/app/services/detalle.service';
+import { DetalleService } from 'src/app/services/detalle.service'; // Verifica esta línea
 
 @Component({
   selector: 'app-detalle',
@@ -10,7 +10,7 @@ import { DetalleService } from 'src/app/services/detalle.service';
 })
 export class DetalleComponent implements OnInit {
   detalles: Detalle[] = [];
-  contactoId: number = 0; // Inicializar contactoId aquí
+  contactoId: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,7 +30,6 @@ export class DetalleComponent implements OnInit {
   }
 
   abrirModal() {
-    // Aquí puedes agregar la lógica para abrir el modal
-    console.log('Modal abierto');
+    // Lógica para abrir el modal
   }
 }
