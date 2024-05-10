@@ -30,13 +30,16 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "remixicon/fonts/remixicon.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/app/components/detalle/detalle.component.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

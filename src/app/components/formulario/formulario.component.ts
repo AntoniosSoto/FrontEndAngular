@@ -76,7 +76,7 @@ export class FormularioComponent {
   }
 
   getFormTitle(): string {
-    return this.contactoId ? 'Editar gasto' : 'Nuevo gasto';
+    return this.contactoId ? 'Editar Contacto' : 'Nuevo Contacto';
   }
 
   private loadDataIntoForm(): void {

@@ -8,7 +8,7 @@ import { Detalle } from '../models/detalle.model';
 })
 export class DetalleService {
   private readonly API_URL = 'http://127.0.0.1:8000/api/detalle';
-
+  
   constructor(private http: HttpClient) { }
 
   // Método para obtener todos los detalles de un contacto por su ID

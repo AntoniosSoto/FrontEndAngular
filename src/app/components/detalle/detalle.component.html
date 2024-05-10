@@ -2,7 +2,7 @@
   <h2 class="mb-4">Detalles del Contacto</h2>
 
   <!-- Botón para abrir el modal -->
-  <button type="button" class="btn btn-primary mb-3" (click)="abrirModal()">Agregar Detalle</button>
+  <button type="button" class="btn btn-primary mb-3" (click)="abrirModal">Agregar Detalle</button>
 
   <div *ngIf="detalles.length > 0" class="list-group">
     <div *ngFor="let detalle of detalles" class="list-group-item">
@@ -15,3 +15,28 @@
     No se encontraron detalles para este contacto.
   </div>
 </div>
+
+
+
+<!-- detalle.component.html -->
+<div class="modal" [class.open]="modalAbierto">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Título del Modal</h5>
+        <button type="button" class="close" aria-label="Close" (click)="cerrarModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Contenido del modal -->
+        <p>Contenido del modal...</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cerrarModal()">Cerrar</button>
+        <!-- Otros botones o acciones -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop" [class.show]="modalAbierto"></div>

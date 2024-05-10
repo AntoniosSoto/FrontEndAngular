@@ -11,7 +11,6 @@ import { ContactoListComponent } from './components/contacto-list/contacto-list.
 import { PaginacionComponent } from './components/paginacion/paginacion.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalComponent } from './components/modal/modal.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { DetalleComponent } from './components/detalle/detalle.component';
     ContactoListComponent,
     PaginacionComponent,
     FormularioComponent,
-    ModalComponent,
     DetalleComponent
   ],
   imports: [
